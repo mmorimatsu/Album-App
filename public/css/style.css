@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* Common
+-------------------------------------------------- */
+body {font-family: 'Klee One', cursive;}
+
+img {width: 100%;}
+
+h1 {font-size: 1.50rem;}
+h2 {font-size: 1.25rem;}
+
+.container {
+    margin: 0 10%;
+}
+
+main {
+    margin: 20px 0;
+
+    h2, &>p {
+        margin-bottom: 20px;
+    }
+}
+
+#footer {
+    border-top: solid 1px #000;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* GlobalMenu
+-------------------------------------------------- */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 10px 0;
+
+    /* [Mobile]
+    ------------------------------------------ */
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px;
+    }
+
+    #global-menu {
+        display: flex;
+        gap: 30px;
+        text-transform: capitalize;
+    }
+}
+
+/* TopPage
+-------------------------------------------------- */
+#top {
+    .contact-btn {
+        text-decoration: underline;
+        text-transform: capitalize;
+    }
+}
