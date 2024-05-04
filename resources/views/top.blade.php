@@ -12,9 +12,8 @@
     <header id="header">
         <h1>Portfolio</h1>
         <ul id="global-menu">
-            {{-- <li><a href="{{ route('photos.index') }}">AlbumApp</a></li> --}}
-            <li><a href="#">AlbumApp</a></li>
-            <li><a href="#">GiuHub</a></li>
+            <li><a href="{{ route('photos.index') }}">AlbumApp</a></li>
+            <li><a href="https://github.com/mmorimatsu/Album-App">GitHub</a></li>
         </ul>
     </header>
 
