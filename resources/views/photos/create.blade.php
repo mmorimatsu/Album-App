@@ -5,7 +5,7 @@
     <h1 style="font-size:40px; padding:50px 0 0.5em 0; border-bottom: 2px solid #dee7ec;">みんなでフォトアル！</h1>
     <h1 style="font-size:30px; margin-top:30px;">写真のアップロード</h1>
     <br>
-    {{-- @if ($errors->any())
+    @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -13,10 +13,9 @@
             @endforeach
         </ul>
     </div>
-    @endif --}}
+    @endif
 
-    {{-- <form method="post" action="{{ route('photos.index') }}" enctype="multipart/form-data"> --}}
-    <form method="POST" action="">
+    <form method="post" action="{{ route('photos.index') }}" enctype="multipart/form-data">
         @csrf
         <h3 style="font-size:24px; margin-top:5px;">写真の選択</h3>
         <div class="form-group">
@@ -60,8 +59,7 @@
         </div>
         <div class="mt-3 mb-5">
             <button type="submit" class="btn btn-primary">アップロード</button>
-            {{-- <a href="{{ route('photos.index') }}" type="button" class="btn btn-link">戻る</a> --}}
-            <a href="./" type="button" class="btn btn-link">戻る</a>
+            <a href="{{ route('photos.index') }}" type="button" class="btn btn-link">戻る</a>
         </div>
     </form>
 

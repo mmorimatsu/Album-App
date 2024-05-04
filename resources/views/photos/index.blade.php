@@ -6,7 +6,7 @@
   <div class="row mt-5 mb-3">
     <div class="col text-right">
       {{-- <a href="{{ route('photos.create') }}" type="button" class="btn btn-primary">アップロード</a> --}}
-      <a href="./create" type="button" class="btn btn-primary">アップロード</a>
+      <a href="{{ route('photos.create') }}" type="button" class="btn btn-primary">アップロード</a>
     </div>
   </div>
   <div class="row my-3">
@@ -27,7 +27,7 @@
                 <td>{{ $photo->photoby }}</td>
                 <td>{{ $photo->date }}</td>
                 <td>{{ $photo->location }}</td> --> --}}
-                <td><a href="./photos/show">写真1</td>
+                <td><a href="{{ route('photos.show', 1)}}">写真1</td>
                 <td>hogehoge</td>
                 <td>9999-99-99</td>
                 <td>hoge</td>

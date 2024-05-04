@@ -52,7 +52,7 @@
     </div>
     <div class="mt-3 mb-5 text-center">
         {{-- <a href="{{ route('photos.index') }}" type="button" class="btn btn-link">アルバムに戻る</a> --}}
-        <a href="./" type="button" class="btn btn-link">アルバムに戻る</a>
+        <a href="{{ route('photos.index') }}" type="button" class="btn btn-link">アルバムに戻る</a>
     </div>
   </div>
   {{-- @endif --}}
