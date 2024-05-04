@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class PhotoController extends Controller
@@ -11,7 +12,9 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        return view('photos.index');
+        return view ('photos.index',[
+            'photos' => Photo::all(),
+        ]);
     }
 
     /**
@@ -41,6 +44,28 @@ class PhotoController extends Controller
             'ISO' => 'max:255',
             'edit' => 'max:255',
         ]);
+
+        // Modelを作成
+        $Photo = new Photo;
+        $image_path = $validatedData['photo']->store('public/avatar/');
+        $Photo ->filename = basename($image_path);
+        // InterventionImage::make($Photo)->resize(1920, null, function ($constraint) {$constraint->aspectRatio();});
+        $Photo ->photoby = $validatedData['photoby'];
+        $Photo ->date = $validatedData['date'];
+        $Photo ->location = $validatedData['location'];
+        $Photo ->gear = $validatedData['gear'];
+        $Photo ->lens = $validatedData['lens'];
+        $Photo ->SS = $validatedData['SS'];
+        $Photo ->Fnumber = $validatedData['F-number'];
+        $Photo ->ISO = $validatedData['ISO'];
+        $Photo ->edit = $validatedData['edit'];
+
+        // ModelをDBに保存
+        $Photo->save();
+
+        // 一覧ページを表示
+        // ※ リロードされたときに、もう一度データが保存されないようにリダイレクトさせる
+        return redirect(route('photos.index'));
     }
 
     /**
@@ -48,7 +73,9 @@ class PhotoController extends Controller
      */
     public function show(string $id)
     {
-        return view('photos.show');
+        return view('photos.show', [
+            'photo' => Photo::find($id)
+        ]);
     }
 
     /**
