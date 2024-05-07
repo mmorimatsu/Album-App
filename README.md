@@ -45,3 +45,7 @@ https://www.udemy.com/course/web-app-development/?couponCode=KEEPLEARNING
 - GitHub（Udemyの学習で使用）
 
 https://github.com/masa0221/laravel-quiz-app
+
+- Topページ作成時参考サイト
+
+https://zenn.dev/dainaka/scraps/25b3503ece034f
