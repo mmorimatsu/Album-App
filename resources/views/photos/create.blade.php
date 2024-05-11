@@ -58,8 +58,15 @@
             <textarea name="edit" class="form-control" id="questionTextarea" rows="1">{{ old('edit') }}</textarea>
         </div>
         <div class="mt-3 mb-5">
+            @if (App::environment('local'))
+            {{-- ローカル環境 --}}
             <button type="submit" class="btn btn-primary">アップロード</button>
             <a href="{{ route('photos.index') }}" type="button" class="btn btn-link">戻る</a>
+            @else
+            {{-- 本番環境 --}}
+            <p style="font-size:20px; margin-top:50px;">※本番環境では実装作業中のためアップロードはできません</p>
+            <a href="{{ route('photos.index') }}" type="button" class="btn btn-link">戻る</a>
+            @endif
         </div>
     </form>
 
