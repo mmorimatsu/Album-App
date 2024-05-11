@@ -4,6 +4,7 @@
 
 写真のアップロード、詳細情報の閲覧ができる  
 
+※写真のアップロードはローカル環境でのみ可能
 
 ## アプリの使用想定
 
@@ -49,3 +50,7 @@ https://github.com/masa0221/laravel-quiz-app
 - Topページ作成時参考サイト
 
 https://zenn.dev/dainaka/scraps/25b3503ece034f
+
+-  本アプリ作成の備忘録 
+
+https://note.com/motsumusic777/n/n7065545e8bab

@@ -14,6 +14,7 @@
         <ul id="global-menu">
             <li><a href="{{ route('photos.index') }}">AlbumApp</a></li>
             <li><a href="https://github.com/mmorimatsu/Album-App">GitHub</a></li>
+            <li><a href="https://note.com/motsumusic777/n/n7065545e8bab">note</a></li>
         </ul>
     </header>
 
