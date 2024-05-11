@@ -54,7 +54,7 @@ class PhotoController extends Controller
         } else {
             // 本番環境
             $image = $request->file('photo');
-            $image_path = Storage::disk('s3')->purFile('/', $image, 'public');
+            $image_path = Storage::disk('s3')->putFile('/', $image, 'public');
             $Photo ->filename = $image_path;
         }
         $Photo ->photoby = $validatedData['photoby'];
