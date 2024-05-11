@@ -56,7 +56,7 @@ class PhotoController extends Controller
             // 本番環境
             $image = $request->file('photo');
             $image_path = Storage::disk('s3')->putFile('/', $image, 'public');
-            $Photo ->filename = Storage::disk('s3')->url($path);
+            $Photo ->filename = Storage::disk('s3')->url($image_path);
         }
         $Photo ->photoby = $validatedData['photoby'];
         $Photo ->date = $validatedData['date'];
