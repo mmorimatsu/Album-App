@@ -16,7 +16,7 @@
             <img src="{{ asset('storage/avatar/'.$photo->filename) }}" width="40%">
         @else
             {{-- 本番環境 --}}
-            <td><a href="{{ route('photos.show', $photo->id)}}"><img src="https://mmorimatsuportfolio.s3.ap-northeast-1.amazonaws.com/{{ $photo->filename }}" width="40%"></a></td>
+            <td><a href="{{ route('photos.show', $photo->id)}}"><img src="{{ $photo->filename }}" width="40%"></a></td>
         @endif
     </div>
     <div style="font-size:18px; padding-top:20px">
