@@ -21,7 +21,13 @@
         <tbody>
             @foreach($photos as $photo)
             <tr>
-                <td><a href="{{ route('photos.show', $photo->id)}}"><img src="{{ asset('storage/avatar/'.$photo->filename) }}" width="60%"></a></td>
+                @if (App::environment('local'))
+                    {{-- ローカル環境 --}}
+                    <td><a href="{{ route('photos.show', $photo->id)}}"><img src="{{ asset('storage/avatar/'.$photo->filename) }}" width="60%"></a></td>
+                @else
+                    {{-- 本番環境 --}}
+                    <td><a href="{{ route('photos.show', $photo->id)}}"><img src="https://mmorimatsuportfolio.s3.ap-northeast-1.amazonaws.com/{{ $photo->filename }}" width="60%"></a></td>
+                @endif
                 <td>{{ $photo->photoby }}</td>
                 <td>{{ $photo->date }}</td>
                 <td>{{ $photo->location }}</td>

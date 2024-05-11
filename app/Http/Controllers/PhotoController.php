@@ -47,9 +47,16 @@ class PhotoController extends Controller
 
         // Modelを作成
         $Photo = new Photo;
-        $image_path = $validatedData['photo']->store('public/avatar/');
-        $Photo ->filename = basename($image_path);
-        // InterventionImage::make($Photo)->resize(1920, null, function ($constraint) {$constraint->aspectRatio();});
+        if (app()->isLocal()) {
+            // ローカル環境
+            $image_path = $validatedData['photo']->store('public/avatar/');
+            $Photo ->filename = basename($image_path);
+        } else {
+            // 本番環境
+            $image = $request->file('photo');
+            $image_path = Storage::disk('s3')->purFile('/', $image, 'public');
+            $Photo ->filename = $image_path;
+        }
         $Photo ->photoby = $validatedData['photoby'];
         $Photo ->date = $validatedData['date'];
         $Photo ->location = $validatedData['location'];
